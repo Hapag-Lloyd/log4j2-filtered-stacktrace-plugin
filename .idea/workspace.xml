@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8de7aa12-35ed-48ea-abbb-a153832fe3d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.config/cspell.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/linter.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/renovate_auto_approve.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/slash_ops_command_help.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/slash_ops_comment_dispatch.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/spelling.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/stale.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/welcome-message.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="kayma/aut-workflow" />
+                    <option name="lastUsedInstant" value="1710581447" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="kayma/inital-code" />
+                    <option name="lastUsedInstant" value="1710579601" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="kayma/license" />
+                    <option name="lastUsedInstant" value="1710579397" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="kayma/community-files" />
+                    <option name="lastUsedInstant" value="1710578725" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="kayma/default-templates" />
+                    <option name="lastUsedInstant" value="1710578303" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2dlLBpbzlyPWjMA9xG6wMSE2b0T" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Matthias/git/Hapag-Lloyd/dist-comm-vis",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matthias\git\Hapag-Lloyd\log4j2-filtered-stacktrace-plugin\.github" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8de7aa12-35ed-48ea-abbb-a153832fe3d3" name="Changes" comment="" />
+      <created>1710577586014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710577586014</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

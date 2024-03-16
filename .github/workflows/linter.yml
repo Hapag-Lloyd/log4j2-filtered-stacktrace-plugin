@@ -1,0 +1,111 @@
+---
+name: Lint files
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+
+jobs:
+  find-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: changes
+        with:
+          filters: |
+            json:
+              - '**/*.json'
+
+            markdown:
+              - '**/*.md'
+
+            renovate-config:
+              - 'renovate.json'
+              - 'default.json'
+
+            workflow:
+              - '.github/workflows/*.yml'
+              - '.github/workflows/*.yaml'
+
+            yaml:
+              - '**/*.yaml'
+              - '**/*.yml'
+    outputs:
+      json: ${{ steps.changes.outputs.json }}
+      markdown: ${{ steps.changes.outputs.markdown }}
+      renovate-config: ${{ steps.changes.outputs.renovate-config }}
+      workflow: ${{ steps.changes.outputs.workflow }}
+      yaml: ${{ steps.changes.outputs.yaml }}
+
+  lint-json:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: needs.find-changes.outputs.json == 'true'
+    needs: find-changes
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: Run JSON Lint
+        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
+
+  lint-markdown:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: needs.find-changes.outputs.markdown == 'true'
+    needs: find-changes
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: Validate Markdown file
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint -c .config/markdownlint.yml -i CHANGELOG.md "**/*.md"
+
+  lint-renovate:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: needs.find-changes.outputs.renovate-config == 'true'
+    needs: find-changes
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
+
+  lint-shell:
+    name: Check shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: ShellCheck
+        uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
+
+  lint-workflow:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: find-changes
+    if: needs.find-changes.outputs.workflow == 'true'
+    container:
+      image: rhysd/actionlint:1.6.27@sha256:d84eca815fc24f72546ec1f2f416d9500ad3349ce7db098cf7a52256f5fd4384
+      options: --cpus 1 --user root
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: Validate Github workflows
+        run: |
+          mkdir .git
+          actionlint -color
+
+  lint-yaml:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: find-changes
+    if: needs.find-changes.outputs.yaml == 'true'
+    steps:
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c # v3.1.1
+        with:
+          config_file: .config/yamllint.yml
+          strict: true
