@@ -14,12 +14,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 class FilteredStacktraceExceptionResolverUnitTest {
-    public static final List<String> PACKAGES_TO_REMOVE_FROM_STACKTRACE = List.of("org.junit");
+    public static final List<String> PACKAGES_TO_REMOVE_FROM_STACKTRACE = Arrays.asList("org.junit");
     private FilteredStacktraceExceptionResolver filteredStacktraceExceptionResolver;
 
     @Mock

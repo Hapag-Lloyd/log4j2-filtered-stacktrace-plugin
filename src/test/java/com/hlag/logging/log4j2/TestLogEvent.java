@@ -26,6 +26,7 @@ public class TestLogEvent implements LogEvent {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public Map<String, String> getContextMap() {
         return null;
     }

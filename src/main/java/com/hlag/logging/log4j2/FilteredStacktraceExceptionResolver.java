@@ -8,6 +8,7 @@ import org.apache.logging.log4j.layout.template.json.resolver.TemplateResolver;
 import org.apache.logging.log4j.layout.template.json.resolver.TemplateResolverConfig;
 import org.apache.logging.log4j.layout.template.json.util.JsonWriter;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ import java.util.List;
  * @author Copied from Apache log4j2 and modified by takanuva15
  */
 class FilteredStacktraceExceptionResolver implements EventResolver {
-    private static List<String> packagesToRemoveFromStacktrace = List.of(
+    private static List<String> packagesToRemoveFromStacktrace = Arrays.asList(
             "com.ibm.ejs",
             "com.ibm.tx",
             "com.ibm.ws",

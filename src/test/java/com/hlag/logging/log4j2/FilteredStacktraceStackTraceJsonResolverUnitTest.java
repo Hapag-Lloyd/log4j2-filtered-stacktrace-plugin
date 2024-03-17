@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,7 +33,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(60000).setTruncatedStringSuffix("...").build();
 
-        FilteredStacktraceExceptionResolver.setPackagesToRemoveFromStacktrace(List.of("com.hlag.fis.sales"));
+        FilteredStacktraceExceptionResolver.setPackagesToRemoveFromStacktrace(Arrays.asList("com.hlag.logging.log4j2"));
         filteredStacktraceExceptionResolver = new FilteredStacktraceExceptionResolver(mockedEventResolverContext, null);
     }
 
