@@ -33,4 +33,3 @@ jobs:
               body: 'Hey there ${{ steps.vars.outputs.maintainer }}, could you please help @${{ github.event.client_payload.github.payload.comment.user.login }} out?'
             })
           # yamllint enable rule:line-length
-

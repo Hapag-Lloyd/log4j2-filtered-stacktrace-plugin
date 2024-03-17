@@ -15,4 +15,3 @@ jobs:
         with:
           review-message: "Auto approved Renovate PR by organization"
           github-token: ${{ secrets.PAT_FOR_PR_AUTO_APPROVAL }}
-

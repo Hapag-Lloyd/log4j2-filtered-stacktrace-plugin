@@ -14,4 +14,3 @@ jobs:
       - uses: streetsidesoftware/cspell-action@e6f09063780e6ace11d87ce10d818d4e2bad9b66 # v5.4.0
         with:
           config: .config/cspell.json
-

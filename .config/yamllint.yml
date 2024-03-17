@@ -6,4 +6,3 @@ rules:
     max: 132
   comments:
     min-spaces-from-content: 1
-
