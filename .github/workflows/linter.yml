@@ -20,6 +20,7 @@ jobs:
               - '**/*.md'
 
             renovate-config:
+              - '.github/renovate.json'
               - 'renovate.json'
               - 'default.json'
 
