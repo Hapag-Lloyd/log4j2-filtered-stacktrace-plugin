@@ -20,9 +20,12 @@ jobs:
               - '**/*.md'
 
             renovate-config:
+              - '.github/renovate.json5'
               - '.github/renovate.json'
               - 'renovate.json'
+              - 'renovate.json5'
               - 'default.json'
+              - 'default.json5'
 
             workflow:
               - '.github/workflows/*.yml'

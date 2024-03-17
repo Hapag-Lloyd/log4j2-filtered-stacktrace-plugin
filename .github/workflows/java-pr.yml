@@ -1,5 +1,7 @@
+---
 name: Build Java PR
 
+# yamllint disable-line rule:truthy
 on:
   pull_request:
 
@@ -16,3 +18,4 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+

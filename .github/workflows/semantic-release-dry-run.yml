@@ -1,5 +1,7 @@
+---
 name: Release Test
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -27,3 +29,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GH_TOKEN }}
         run: unset GITHUB_ACTIONS && npx --prefix .release/ semantic-release --dry-run --no-ci --debug
+

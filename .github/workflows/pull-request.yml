@@ -47,3 +47,4 @@ jobs:
           wip: true
           validateSingleCommit: false
           validateSingleCommitMatchesPrTitle: false
+
