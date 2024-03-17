@@ -2,7 +2,22 @@
   "version": "0.2",
   "language": "en",
   "words": [
+    "codeowners",
+    "cpus"
   ],
   "ignoreWords": [
+    "amannn",
+    "dorny",
+    "frenz",
+    "hmarr",
+    "ibiqlik",
+    "kayman",
+    "ludeeus",
+    "markdownlint",
+    "rhysd",
+    "shellcheck",
+    "shuf",
+    "shusuke",
+    "temurin"
   ]
 }
