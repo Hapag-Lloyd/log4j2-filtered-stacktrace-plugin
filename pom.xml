@@ -33,9 +33,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/Hapag-Lloyd/dist-comm-vis.git</connection>
-        <developerConnection>scm:git:ssh://gitHub.com:Hapag-Lloyd/dist-comm-vis.git</developerConnection>
-        <url>https://github.com/Hapag-Lloyd/dist-comm-vis/tree/main</url>
+        <connection>scm:git:git://github.com/Hapag-Lloyd/log4j2-filtered-stacktrace-plugin.git</connection>
+        <developerConnection>scm:git:ssh://gitHub.com:Hapag-Lloyd/log4j2-filtered-stacktrace-plugin.git</developerConnection>
+        <url>https://github.com/Hapag-Lloyd/log4j2-filtered-stacktrace-plugin/tree/main</url>
     </scm>
 
     <distributionManagement>
