@@ -29,7 +29,7 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
             "jdk.internal",
             "org.apache.cxf",
             "org.hibernate.validator.cdi",
-            "org.jboss.weld");
+            "org.jboss.weld", "org.junit", "com.intellij", "java.util");
     private final TemplateResolver<Throwable> internalResolver;
 
     FilteredStacktraceExceptionResolver(EventResolverContext context, TemplateResolverConfig config) {
