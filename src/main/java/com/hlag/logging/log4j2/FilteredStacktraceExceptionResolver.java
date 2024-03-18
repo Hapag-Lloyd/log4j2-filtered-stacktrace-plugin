@@ -21,6 +21,7 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
     private static List<String> packagesToRemoveFromStacktrace = Arrays.asList(
             "com.ibm.ejs",
             "com.ibm.tx",
+            "com.ibm.websphere.jaxrs.",
             "com.ibm.ws",
             "java.lang",
             "java.security",
