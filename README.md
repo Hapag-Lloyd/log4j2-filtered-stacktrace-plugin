@@ -1,12 +1,12 @@
 <!-- First line should be an H1: Badges on top please! -->
 <!-- markdownlint-disable first-line-h1 -->
-[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/workflows/semantic-release/badge.svg)](https://github.com/Hapag-Lloyd/dist-comm-vis-api/actions)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.hlag.tools.commvis/api)
+[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/actions/workflows/semantic-release/badge.svg)](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/actions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter-plugin)
 <!-- markdownlint-enable first-line-h1 -->
 
 # Filter Stacktrace Plugin for Log4j2
 
-This project contains a stacktrace filter for the Log4j2 logging system. It can be included in a `JsonTemplateLayout`.
+This project contains a stacktrace filter for the Log4j2 logging system. It can be included in a [`JsonTemplateLayout`](https://logging.apache.org/log4j/2.x/manual/json-template-layout.html).
 
 The plugin reduces the stacktrace by filtering classes which are not of any interest. It has a built-in list of packages to exclude
 from the stacktrace.
