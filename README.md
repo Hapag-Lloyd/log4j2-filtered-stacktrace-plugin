@@ -1,6 +1,6 @@
 <!-- First line should be an H1: Badges on top please! -->
 <!-- markdownlint-disable first-line-h1 -->
-[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/workflows/Release/badge.svg)](https://github.com/Hapag-Lloyd/dist-comm-vis-api/actions)
+[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/workflows/semantic-release/badge.svg)](https://github.com/Hapag-Lloyd/dist-comm-vis-api/actions)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.hlag.tools.commvis/api)
 <!-- markdownlint-enable first-line-h1 -->
 
