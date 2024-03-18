@@ -10,6 +10,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>Stacktrace filter for Log4j2</name>
     <description>Filters the stacktrace to reduce the size by removing irrelevant packages.</description>
+    <url>https://github.com/Hapag-Lloyd/log4j2-filtered-stacktrace-plugin</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
