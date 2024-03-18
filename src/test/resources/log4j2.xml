@@ -3,7 +3,8 @@
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
             <JsonTemplateLayout eventTemplateUri="classpath:JsonLayout.json" maxStringLength="32768" stackTraceEnabled="false">
-                <EventTemplateAdditionalField key="error" format="JSON" value='{"$resolver": "filteredStacktraceException"}'/>
+                <EventTemplateAdditionalField key="error" format="JSON"
+                                              value='{"$resolver": "filteredStacktraceException", "additionalPackagesToIgnore": ["com.hlag.logging.log4j2"]}' />
             </JsonTemplateLayout>
         </Console>
     </Appenders>

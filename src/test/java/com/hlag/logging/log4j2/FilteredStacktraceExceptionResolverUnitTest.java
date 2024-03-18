@@ -2,6 +2,7 @@ package com.hlag.logging.log4j2;
 
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.layout.template.json.resolver.EventResolverContext;
+import org.apache.logging.log4j.layout.template.json.resolver.TemplateResolverConfig;
 import org.apache.logging.log4j.layout.template.json.util.JsonWriter;
 import org.apache.logging.log4j.layout.template.json.util.QueueingRecyclerFactory;
 import org.assertj.core.api.Assertions;
@@ -20,11 +21,13 @@ import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 class FilteredStacktraceExceptionResolverUnitTest {
-    public static final List<String> PACKAGES_TO_REMOVE_FROM_STACKTRACE = Arrays.asList("org.junit");
+    private static final List<String> PACKAGE_TO_REMOVE_FROM_STACKTRACE = Arrays.asList("org.junit");
     private FilteredStacktraceExceptionResolver filteredStacktraceExceptionResolver;
 
     @Mock
     private EventResolverContext mockedEventResolverContext;
+    @Mock
+    private TemplateResolverConfig mockedConfig;
 
     private JsonWriter jsonWriter;
 
@@ -34,10 +37,11 @@ class FilteredStacktraceExceptionResolverUnitTest {
         Mockito.lenient().when(mockedEventResolverContext.getRecyclerFactory()).thenReturn(new QueueingRecyclerFactory(LinkedList::new));
         Mockito.lenient().when(mockedEventResolverContext.getMaxStringByteCount()).thenReturn(10000);
 
+        Mockito.when(mockedConfig.getList(Mockito.eq("additionalPackagesToIgnore"), Mockito.eq(String.class))).thenReturn(PACKAGE_TO_REMOVE_FROM_STACKTRACE);
+
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(10000).setTruncatedStringSuffix("...").build();
 
-        FilteredStacktraceExceptionResolver.setPackagesToRemoveFromStacktrace(PACKAGES_TO_REMOVE_FROM_STACKTRACE);
-        filteredStacktraceExceptionResolver = new FilteredStacktraceExceptionResolver(mockedEventResolverContext, null);
+        filteredStacktraceExceptionResolver = new FilteredStacktraceExceptionResolver(mockedEventResolverContext, mockedConfig);
     }
 
     @Test
@@ -83,7 +87,7 @@ class FilteredStacktraceExceptionResolverUnitTest {
         filteredStacktraceExceptionResolver.resolve(givenLogEvent, jsonWriter);
         String actualStringOutput = jsonWriter.getStringBuilder().toString();
 
-        Assertions.assertThat(actualStringOutput).doesNotContain(PACKAGES_TO_REMOVE_FROM_STACKTRACE);
+        Assertions.assertThat(actualStringOutput).doesNotContain(PACKAGE_TO_REMOVE_FROM_STACKTRACE.get(0));
     }
 
     private Exception createExceptionWithStacktrace() {
