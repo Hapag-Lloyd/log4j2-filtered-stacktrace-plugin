@@ -2,23 +2,34 @@
   "version": "0.2",
   "language": "en",
   "words": [
+    "appender",
+    "classpath",
     "codeowners",
-    "cpus"
+    "cpus",
+    "frenz",
+    "hlag",
+    "javadoc",
+    "sonatype",
+    "stackoverflow"
   ],
   "ignoreWords": [
     "amannn",
+    "assertj",
     "dorny",
-    "frenz",
+    "fqcn",
     "hapag",
     "hmarr",
     "ibiqlik",
     "kayman",
     "ludeeus",
     "markdownlint",
+    "ossrh",
+    "projectlombok",
     "rhysd",
     "shellcheck",
     "shuf",
     "shunsuke",
+    "takanuva",
     "temurin"
   ]
 }
