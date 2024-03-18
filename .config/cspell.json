@@ -13,7 +13,8 @@
     "javadocs",
     "servlet",
     "sonatype",
-    "stackoverflow"
+    "stackoverflow",
+    "websphere"
   ],
   "ignoreWords": [
     "amannn",
@@ -24,6 +25,7 @@
     "hapag",
     "hmarr",
     "ibiqlik",
+    "jaxrs",
     "kayman",
     "ludeeus",
     "markdownlint",
