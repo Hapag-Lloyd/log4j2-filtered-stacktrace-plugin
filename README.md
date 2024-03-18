@@ -16,7 +16,7 @@ from the stacktrace.
 Adding the filter to the logging configuration with `<EventTemplateAdditionalField key="error" format="JSON" value='{"$resolver": "filteredStacktraceException"}'/>`
 produces the following Json object in the log stream:
 
-<!-- markdownlint-enable MD013/line-length -->
+<!-- markdownlint-disable MD013/line-length -->
 ```json
 "error": {
   "stack": "java.lang.RuntimeException: java.lang.ArithmeticException: / by zero\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:21)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]\r\ncaused by java.lang.ArithmeticException\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.throwArithmeticException(LoggerIntegrationTest.java:25)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:19)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]",
@@ -25,7 +25,7 @@ produces the following Json object in the log stream:
   "totalFilteredElements": 140
 }
 ```
-<!-- markdownlint-disable MD013/line-length -->
+<!-- markdownlint-enable MD013/line-length -->
 
 140 elements have been removed from the stacktrace. Only those remain which are relevant for your application.
 
