@@ -1,6 +1,7 @@
 <!-- First line should be an H1: Badges on top please! -->
 <!-- markdownlint-disable MD041/first-line-heading/first-line-h1 -->
-[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/workflows/Release/badge.svg)](https://github.com/Hapag-Lloyd/dist-comm-vis-api/actions) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.hlag.tools.commvis/api)
+[![Actions](https://github.com/Hapag-Lloyd/log4j2-stacktrace-filter-plugin/workflows/Release/badge.svg)](https://github.com/Hapag-Lloyd/dist-comm-vis-api/actions)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.hlag.logging/log4j2-stacktrace-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.hlag.tools.commvis/api)
 <!-- markdownlint-enable MD041/first-line-heading/first-line-h1 -->
 
 # Filter Stacktrace Plugin for Log4j2
@@ -15,7 +16,7 @@ from the stacktrace.
 Adding the filter to the logging configuration with `<EventTemplateAdditionalField key="error" format="JSON" value='{"$resolver": "filteredStacktraceException"}'/>`
 produces the following Json object in the log stream:
 
-<!-- markdownlint-disable MD013/line-length -->
+<!-- markdownlint-enable MD013/line-length -->
 ```json
 "error": {
   "stack": "java.lang.RuntimeException: java.lang.ArithmeticException: / by zero\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:21)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]\r\ncaused by java.lang.ArithmeticException\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.throwArithmeticException(LoggerIntegrationTest.java:25)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:19)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]",
@@ -24,7 +25,7 @@ produces the following Json object in the log stream:
   "totalFilteredElements": 140
 }
 ```
-<!-- markdownlint-enable MD013/line-length -->
+<!-- markdownlint-disable MD013/line-length -->
 
 140 elements have been removed from the stacktrace. Only those remain which are relevant for your application.
 
