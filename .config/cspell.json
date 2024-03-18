@@ -1,0 +1,39 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "appender",
+    "appenders",
+    "classpath",
+    "codeowners",
+    "cpus",
+    "frenz",
+    "hlag",
+    "javadoc",
+    "javadocs",
+    "servlet",
+    "sonatype",
+    "stackoverflow"
+  ],
+  "ignoreWords": [
+    "amannn",
+    "assertj",
+    "conventionalcommits",
+    "dorny",
+    "fqcn",
+    "hapag",
+    "hmarr",
+    "ibiqlik",
+    "kayman",
+    "ludeeus",
+    "markdownlint",
+    "ossrh",
+    "projectlombok",
+    "rhysd",
+    "shellcheck",
+    "shuf",
+    "shunsuke",
+    "takanuva",
+    "temurin"
+  ]
+}
