@@ -1,6 +1,5 @@
 package com.hlag.logging.log4j2;
 
-import com.google.common.annotations.VisibleForTesting;
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.layout.template.json.resolver.EventResolver;
 import org.apache.logging.log4j.layout.template.json.resolver.EventResolverContext;

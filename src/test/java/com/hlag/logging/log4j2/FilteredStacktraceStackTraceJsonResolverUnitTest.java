@@ -33,6 +33,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
         Mockito.when(mockedEventResolverContext.getRecyclerFactory()).thenReturn(new QueueingRecyclerFactory(LinkedList::new));
         Mockito.when(mockedEventResolverContext.getMaxStringByteCount()).thenReturn(60000);
 
+        // this ensures that the internal mechanism of adding packages is working
         Mockito.when(mockedConfig.getList(Mockito.eq("additionalPackagesToIgnore"), Mockito.eq(String.class))).thenReturn(Arrays.asList("com.hlag.logging.log4j2"));
 
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(60000).setTruncatedStringSuffix("...").build();
