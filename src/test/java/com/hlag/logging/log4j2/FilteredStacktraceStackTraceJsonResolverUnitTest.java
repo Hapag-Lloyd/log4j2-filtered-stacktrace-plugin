@@ -2,6 +2,7 @@ package com.hlag.logging.log4j2;
 
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.layout.template.json.resolver.EventResolverContext;
+import org.apache.logging.log4j.layout.template.json.resolver.TemplateResolverConfig;
 import org.apache.logging.log4j.layout.template.json.util.JsonWriter;
 import org.apache.logging.log4j.layout.template.json.util.QueueingRecyclerFactory;
 import org.assertj.core.api.Assertions;
@@ -15,7 +16,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 class FilteredStacktraceStackTraceJsonResolverUnitTest {
@@ -25,16 +25,20 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
     @Mock
     private EventResolverContext mockedEventResolverContext;
+    @Mock
+    private TemplateResolverConfig mockedConfig;
 
     @BeforeEach
     void setUp() {
         Mockito.when(mockedEventResolverContext.getRecyclerFactory()).thenReturn(new QueueingRecyclerFactory(LinkedList::new));
         Mockito.when(mockedEventResolverContext.getMaxStringByteCount()).thenReturn(60000);
 
+        // this ensures that the internal mechanism of adding packages is working
+        Mockito.when(mockedConfig.getList(Mockito.eq("additionalPackagesToIgnore"), Mockito.eq(String.class))).thenReturn(Arrays.asList("com.hlag.logging.log4j2"));
+
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(60000).setTruncatedStringSuffix("...").build();
 
-        FilteredStacktraceExceptionResolver.setPackagesToRemoveFromStacktrace(Arrays.asList("com.hlag.logging.log4j2"));
-        filteredStacktraceExceptionResolver = new FilteredStacktraceExceptionResolver(mockedEventResolverContext, null);
+        filteredStacktraceExceptionResolver = new FilteredStacktraceExceptionResolver(mockedEventResolverContext, mockedConfig);
     }
 
     @Test
@@ -70,7 +74,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
         JSONObject actualLogOutput = new JSONObject(actualStringOutput);
 
-        Assertions.assertThat(actualLogOutput.get("totalFilteredElements")).isEqualTo(2);
+        Assertions.assertThat(actualLogOutput.get("totalFilteredElements")).isEqualTo(6);
     }
 
     @Test

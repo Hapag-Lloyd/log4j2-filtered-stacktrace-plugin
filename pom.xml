@@ -185,12 +185,6 @@
             <artifactId>log4j-layout-template-json</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>33.1.0-jre</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- Lombok for code generation only-->
         <dependency>
@@ -227,7 +221,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20231013</version>
+            <version>20240303</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

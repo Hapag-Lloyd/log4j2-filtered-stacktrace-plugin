@@ -9,7 +9,11 @@
 This project contains a stacktrace filter for the Log4j2 logging system. It can be included in a [`JsonTemplateLayout`](https://logging.apache.org/log4j/2.x/manual/json-template-layout.html).
 
 The plugin reduces the stacktrace by filtering classes which are not of any interest. It has a built-in list of packages to exclude
-from the stacktrace.
+from the stacktrace. Additional packages can be configured in the `log4j2.xml` file. Find the full blown example below.
+
+This plugin was built on top of the work of the Apache Log4j team and takanuva15, who described the plugin in a
+[Stackoverflow article](https://stackoverflow.com/questions/70614495/is-there-a-way-to-override-the-exceptionresolver-of-jsontemplatelayout-of-log4j2/77143208#77143208).
+We replaced the main logic completely.
 
 # Output
 
@@ -47,6 +51,8 @@ Include the following artifact to your project which contains the `log4j2.xml` c
 
 ## Log4j2 Configuration
 
+<!-- no line breaks in Json please -->
+<!-- markdownlint-disable line-length -->
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
@@ -54,7 +60,8 @@ Include the following artifact to your project which contains the `log4j2.xml` c
     <Appenders>
         <Console name="console-datadog" target="SYSTEM_OUT">
             <JsonTemplateLayout eventTemplateUri="classpath:JsonLayout.json" maxStringLength="32768"  stackTraceEnabled="false">
-                <EventTemplateAdditionalField key="error" format="JSON" value='{"$resolver": "filteredStacktraceException"}'/>
+                <EventTemplateAdditionalField key="error" format="JSON"
+                                              value='{"$resolver": "filteredStacktraceException"}, "additionalPackagesToIgnore": ["com.hlag.logging.log4j2."]}' />
             </JsonTemplateLayout>
         </Console>
     </Appenders>
@@ -66,3 +73,9 @@ Include the following artifact to your project which contains the `log4j2.xml` c
     </Loggers>
 </Configuration>
 ```
+<!-- markdownlint-enable line-length -->
+
+## additionalPackagesToIgnore
+
+Use this parameter to add other packages to the built-in list. These packages are ignored too. Especially useful uf you have to
+include company internal frameworks, but you don't want to see them in the stacktrace.
