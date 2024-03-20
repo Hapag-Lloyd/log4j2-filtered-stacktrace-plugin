@@ -22,6 +22,7 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
     private static List<String> packagesToRemoveFromStacktrace = Arrays.asList(
             "com.ibm.ejs.",
             "com.ibm.tx.",
+            "com.ibm.websphere.jaxrs.",
             "com.ibm.ws.",
             "java.lang.",
             "java.security.",
@@ -31,6 +32,7 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
             "org.apache.cxf.",
             "org.hibernate.validator.cdi.",
             "org.jboss.weld.");
+
     private final TemplateResolver<Throwable> internalResolver;
 
     FilteredStacktraceExceptionResolver(EventResolverContext context, TemplateResolverConfig config) {
