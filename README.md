@@ -75,7 +75,7 @@ Include the following artifact to your project which contains the `log4j2.xml` c
 ```
 <!-- markdownlint-enable line-length -->
 
-## additionalPackagesToIgnore
+### additionalPackagesToIgnore
 
-Use this parameter to add other packages to the built-in list. These packages are ignored too. Especially useful uf you have to
+Use this parameter to add other packages to the built-in list. These packages are ignored too. Especially useful if you have to
 include company internal frameworks, but you don't want to see them in the stacktrace.

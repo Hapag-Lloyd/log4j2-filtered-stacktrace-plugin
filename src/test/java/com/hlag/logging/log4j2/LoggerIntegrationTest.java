@@ -22,6 +22,6 @@ class LoggerIntegrationTest {
         }
     }
     private void throwArithmeticException() {
-        float a = 0 / 0;
+        throw new ArithmeticException("/ by zero");
     }
 }
