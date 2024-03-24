@@ -86,5 +86,6 @@ Makes no sense to specify `whitelistedPackages` in addition to this parameter.
 
 ### whitelistPackages
 
-Use this parameter to add packages which should not be ignored. This is useful if you want to ignore all packages except a few. The
-built-in list is ignored in this case as well as `additionalPackagesToIgnore`.
+Use this parameter to define packages which should remain when filtering a stack trace. Every other package is removed from the
+stacktrace. The built-in list of packages to filter as well as the `additionalPackagesToIgnore` parameter have no effect when
+`whitelistPackages` exists.
