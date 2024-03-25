@@ -14,7 +14,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 
 @ExtendWith(MockitoExtension.class)
@@ -34,7 +35,8 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
         Mockito.when(mockedEventResolverContext.getMaxStringByteCount()).thenReturn(60000);
 
         // this ensures that the internal mechanism of adding packages is working
-        Mockito.when(mockedConfig.getList(Mockito.eq("additionalPackagesToIgnore"), Mockito.eq(String.class))).thenReturn(Arrays.asList("com.hlag.logging.log4j2"));
+        Mockito.when(mockedConfig.getList("additionalPackagesToIgnore", String.class)).thenReturn(Collections.singletonList("com.hlag.logging.log4j2"));
+        Mockito.when(mockedConfig.getList("whitelistPackages", String.class)).thenReturn(new ArrayList<>());
 
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(60000).setTruncatedStringSuffix("...").build();
 
@@ -141,12 +143,9 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
     private Exception createExceptionWithStacktrace() {
         try {
-            int a = 0 / 0;
+            throw new ArithmeticException("/ by zero");
         } catch (Exception e) {
             return e;
         }
-
-        // never reached
-        return new RuntimeException();
     }
 }

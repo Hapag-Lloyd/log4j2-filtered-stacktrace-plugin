@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -37,7 +38,8 @@ class FilteredStacktraceExceptionResolverUnitTest {
         Mockito.lenient().when(mockedEventResolverContext.getRecyclerFactory()).thenReturn(new QueueingRecyclerFactory(LinkedList::new));
         Mockito.lenient().when(mockedEventResolverContext.getMaxStringByteCount()).thenReturn(10000);
 
-        Mockito.when(mockedConfig.getList(Mockito.eq("additionalPackagesToIgnore"), Mockito.eq(String.class))).thenReturn(PACKAGE_TO_REMOVE_FROM_STACKTRACE);
+        Mockito.when(mockedConfig.getList("additionalPackagesToIgnore", String.class)).thenReturn(PACKAGE_TO_REMOVE_FROM_STACKTRACE);
+        Mockito.when(mockedConfig.getList("whitelistPackages", String.class)).thenReturn(new ArrayList<>());
 
         jsonWriter = JsonWriter.newBuilder().setMaxStringLength(10000).setTruncatedStringSuffix("...").build();
 

@@ -23,13 +23,15 @@ import java.util.function.Supplier;
 class FilteredStacktraceStackTraceJsonResolver implements TemplateResolver<Throwable> {
     private final Recycler<TruncatingBufferedPrintWriter> destWriterRecycler;
     private final List<String> packagePrefixesToFilter;
+    private final List<String> whitelistPackages;
 
-    FilteredStacktraceStackTraceJsonResolver(EventResolverContext context, List<String> packagePrefixesToFilter) {
+    FilteredStacktraceStackTraceJsonResolver(EventResolverContext context, List<String> packagePrefixesToFilter, List<String> whitelistPackages) {
         final Supplier<TruncatingBufferedPrintWriter> writerSupplier = () -> TruncatingBufferedPrintWriter.ofCapacity(context.getMaxStringByteCount());
         final RecyclerFactory recyclerFactory = context.getRecyclerFactory();
 
         this.destWriterRecycler = recyclerFactory.create(writerSupplier, TruncatingBufferedPrintWriter::close);
         this.packagePrefixesToFilter = packagePrefixesToFilter;
+        this.whitelistPackages = whitelistPackages;
     }
 
     @Override
@@ -104,6 +106,17 @@ class FilteredStacktraceStackTraceJsonResolver implements TemplateResolver<Throw
     }
 
     private boolean classIsInFilteredPackage(String className) {
+        for (String prefix : whitelistPackages) {
+            if (className.startsWith(prefix)) {
+                return false;
+            }
+        }
+
+        // if a whitelist is present everything else is blacklisted
+        if (! whitelistPackages.isEmpty()) {
+            return true;
+        }
+
         for (String prefix : packagePrefixesToFilter) {
             if (className.startsWith(prefix)) {
                 return true;

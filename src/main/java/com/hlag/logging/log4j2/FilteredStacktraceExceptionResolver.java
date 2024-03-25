@@ -36,10 +36,11 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
     private final TemplateResolver<Throwable> internalResolver;
 
     FilteredStacktraceExceptionResolver(EventResolverContext context, TemplateResolverConfig config) {
+        List<String> whitelistPackages = config.getList("whitelistPackages", String.class);
         List<String> additionalPackagesToIgnore = config.getList("additionalPackagesToIgnore", String.class);
 
         this.internalResolver = new FilteredStacktraceStackTraceJsonResolver(context, Stream.concat(packagesToRemoveFromStacktrace.stream(), additionalPackagesToIgnore.stream())
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList()), whitelistPackages);
     }
 
     @Override
