@@ -21,13 +21,13 @@
   "homepage": "https://github.com/Hapag-Lloyd/log4j2-filtered-stacktrace-plugin#readme",
   "dependencies": {
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.0.0",
-    "@semantic-release/release-notes-generator": "^12.0.0",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/release-notes-generator": "^13.0.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
-    "semantic-release": "^22.0.0"
+    "semantic-release": "^23.0.0"
   },
   "devDependencies": {
     "semantic-release-maven": "^1.1.7"
