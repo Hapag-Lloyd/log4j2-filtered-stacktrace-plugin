@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
 
-      - uses: streetsidesoftware/cspell-action@214db1e3138f326d33b7a6a51c92852e89ab0618 # v6.0.0
+      - uses: streetsidesoftware/cspell-action@ca4bb065dd09aca9c90c935f7dc9bb625985226c # v6.1.0
         with:
           config: .config/cspell.json
