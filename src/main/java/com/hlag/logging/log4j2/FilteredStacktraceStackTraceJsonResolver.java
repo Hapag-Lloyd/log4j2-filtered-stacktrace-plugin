@@ -29,6 +29,10 @@ class FilteredStacktraceStackTraceJsonResolver implements TemplateResolver<Throw
         final Supplier<TruncatingBufferedPrintWriter> writerSupplier = () -> TruncatingBufferedPrintWriter.ofCapacity(context.getMaxStringByteCount());
         final RecyclerFactory recyclerFactory = context.getRecyclerFactory();
 
+        if (whitelistPackages == null) {
+            throw new IllegalArgumentException();
+        }
+
         this.destWriterRecycler = recyclerFactory.create(writerSupplier, TruncatingBufferedPrintWriter::close);
         this.packagePrefixesToFilter = packagePrefixesToFilter;
         this.whitelistPackages = whitelistPackages;
