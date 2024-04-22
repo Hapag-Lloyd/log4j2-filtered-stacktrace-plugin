@@ -47,6 +47,22 @@ class FilteredStacktraceExceptionResolverUnitTest {
     }
 
     @Test
+    void shouldBeAbleToCreateInstance_whenConstructor_givenAdditionalPackagesIsNull() {
+        Mockito.when(mockedConfig.getList("additionalPackagesToIgnore", String.class)).thenReturn(null);
+
+        NullPointerException e = Assertions.catchThrowableOfType(() -> new FilteredStacktraceExceptionResolver(mockedEventResolverContext, mockedConfig), NullPointerException.class);
+        Assertions.assertThat(e).isNull();
+    }
+
+    @Test
+    void shouldBeAbleToCreateInstance_whenConstructor_givenWhitelistIsNull() {
+        Mockito.when(mockedConfig.getList("whitelistPackages", String.class)).thenReturn(null);
+
+        NullPointerException e = Assertions.catchThrowableOfType(() -> new FilteredStacktraceExceptionResolver(mockedEventResolverContext, mockedConfig), NullPointerException.class);
+        Assertions.assertThat(e).isNull();
+    }
+
+    @Test
     void shouldReturnTrue_whenIsResolve_givenExceptionInLogEvent() {
         LogEvent givenLogEvent = TestLogEvent.builder().thrown(new RuntimeException()).build();
 

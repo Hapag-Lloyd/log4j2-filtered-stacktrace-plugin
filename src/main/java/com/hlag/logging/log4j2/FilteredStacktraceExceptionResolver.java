@@ -39,6 +39,14 @@ class FilteredStacktraceExceptionResolver implements EventResolver {
         List<String> whitelistPackages = config.getList("whitelistPackages", String.class);
         List<String> additionalPackagesToIgnore = config.getList("additionalPackagesToIgnore", String.class);
 
+        if (additionalPackagesToIgnore == null) {
+            additionalPackagesToIgnore = Arrays.asList();
+        }
+
+        if (whitelistPackages == null) {
+            whitelistPackages = Arrays.asList();
+        }
+
         this.internalResolver = new FilteredStacktraceStackTraceJsonResolver(context, Stream.concat(packagesToRemoveFromStacktrace.stream(), additionalPackagesToIgnore.stream())
                 .collect(Collectors.toList()), whitelistPackages);
     }
