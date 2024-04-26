@@ -68,6 +68,17 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
     }
 
     @Test
+    void shouldHaveCorrectNumberOfCurlyBraces_whenResolve() {
+        LogEvent givenLogEvent = TestLogEvent.builder().thrown(createExceptionWithStacktrace()).build();
+
+        filteredStacktraceExceptionResolver.resolve(givenLogEvent, jsonWriter);
+        String actualStringOutput = jsonWriter.getStringBuilder().toString();
+
+        Assertions.assertThat(actualStringOutput).containsOnlyOnce("{");
+        Assertions.assertThat(actualStringOutput).containsOnlyOnce("}");
+    }
+
+    @Test
     void shouldHaveTotalFilteredElementsAttribute_whenResolve() {
         LogEvent givenLogEvent = TestLogEvent.builder().thrown(createExceptionWithStacktrace()).build();
 

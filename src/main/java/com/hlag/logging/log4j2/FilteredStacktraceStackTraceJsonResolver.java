@@ -90,7 +90,6 @@ class FilteredStacktraceStackTraceJsonResolver implements TemplateResolver<Throw
         jsonAttributes.put("name", throwable.getClass().getName());
 
         jsonWriter.writeObject(jsonAttributes);
-        jsonWriter.writeObjectEnd();
     }
 
     private List<Cause> flattenAndFilterAllCauses(Throwable throwable) {
