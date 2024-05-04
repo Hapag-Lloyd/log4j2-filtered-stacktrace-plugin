@@ -47,7 +47,7 @@ jobs:
     if: needs.find-changes.outputs.json == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: Run JSON Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
@@ -58,7 +58,7 @@ jobs:
     if: needs.find-changes.outputs.markdown == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: Validate Markdown file
         run: |
@@ -71,7 +71,7 @@ jobs:
     if: needs.find-changes.outputs.renovate-config == 'true'
     needs: find-changes
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - uses: suzuki-shunsuke/github-action-renovate-config-validator@b54483862375f51910a60c4f498e927d4f3df466 # v1.0.1
 
@@ -79,7 +79,7 @@ jobs:
     name: Check shell scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: ShellCheck
         uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
@@ -93,7 +93,7 @@ jobs:
       image: rhysd/actionlint:1.6.27@sha256:d84eca815fc24f72546ec1f2f416d9500ad3349ce7db098cf7a52256f5fd4384
       options: --cpus 1 --user root
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: Validate Github workflows
         run: |
@@ -106,7 +106,7 @@ jobs:
     needs: find-changes
     if: needs.find-changes.outputs.yaml == 'true'
     steps:
-      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
 
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c # v3.1.1
