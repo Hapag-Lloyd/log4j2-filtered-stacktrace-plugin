@@ -9,5 +9,5 @@ on:
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/semantic-release.yml@514cf33cb1a4e0581c00383c2b67cabf5f76f24e
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/maven_release_callable.yml@514cf33cb1a4e0581c00383c2b67cabf5f76f24e
     secrets: inherit
