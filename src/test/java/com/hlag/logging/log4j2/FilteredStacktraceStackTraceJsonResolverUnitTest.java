@@ -87,7 +87,8 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
         JSONObject actualLogOutput = new JSONObject(actualStringOutput);
 
-        Assertions.assertThat(actualLogOutput.get("totalFilteredElements")).isEqualTo(6);
+        // the exact number of lines is not important and depends on the Java version used
+        Assertions.assertThat(actualLogOutput.get("totalFilteredElements")).isNotEqualTo(0);
     }
 
     @Test
