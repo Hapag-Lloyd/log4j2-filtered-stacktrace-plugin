@@ -8,14 +8,7 @@ on:
       - created
 
 jobs:
-  slash-command-dispatch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Slash Command Dispatch
-        uses: peter-evans/slash-command-dispatch@13bc09769d122a64f75aa5037256f6f2d78be8c4 # v4.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-type: pull-request
-          reactions: true
-          commands: |
-            help
+  default:
+    # yamllint disable-line rule:line-length
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_slash_ops_comment_dispatch_callable.yml@514cf33cb1a4e0581c00383c2b67cabf5f76f24e
+    secrets: inherit
