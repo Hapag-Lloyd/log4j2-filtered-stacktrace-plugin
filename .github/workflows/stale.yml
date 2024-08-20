@@ -8,5 +8,5 @@ on:
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_stale_callable.yml@e08f390d968322fd66ff5ee4ea826015e23f04c6
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_stale_callable.yml@e92ddcae54be38624beb7297873890d78e9107c3
     secrets: inherit
