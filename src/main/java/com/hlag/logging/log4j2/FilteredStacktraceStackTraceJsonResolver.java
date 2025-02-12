@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 /**
- * Holds the logic on how to delete irrelevant stacktrace lines and formats the stacktrace showing all "caused by".
+ * Holds the logic on how to delete irrelevant stacktrace lines and formats the stacktrace showing all "Caused by".
  * <p>
  * Originally based on <a href="https://stackoverflow.com/questions/70614495/is-there-a-way-to-override-the-exceptionresolver-of-jsontemplatelayout-of-log4j2/77143208#77143208">Stackoverflow</a>
  * but works totally different now.
@@ -51,9 +51,9 @@ class FilteredStacktraceStackTraceJsonResolver implements TemplateResolver<Throw
 
             for (Cause cause : allCauses) {
                 if (!firstCause) {
-                    // write a "caused by"
+                    // write a "Caused by" including cause message, like Java's native stack exporter.
                     stacktraceAsStringWriter.append(System.lineSeparator());
-                    stacktraceAsStringWriter.append(String.format("caused by %s", cause.throwable.getClass().getName()));
+                    stacktraceAsStringWriter.append(String.format("Caused by %s: %s", cause.throwable.getClass().getName(), cause.throwable.getMessage()));
                 }
 
                 int currentFilteredLines = 0;

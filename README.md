@@ -24,7 +24,7 @@ produces the following Json object in the log stream:
 <!-- markdownlint-disable line-length -->
 ```json
 "error": {
-  "stack": "java.lang.RuntimeException: java.lang.ArithmeticException: / by zero\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:21)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]\r\ncaused by java.lang.ArithmeticException\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.throwArithmeticException(LoggerIntegrationTest.java:25)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:19)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]",
+  "stack": "java.lang.RuntimeException: java.lang.ArithmeticException: / by zero\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:21)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]\r\nCaused by java.lang.ArithmeticException: / by zero\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.throwArithmeticException(LoggerIntegrationTest.java:25)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.wrapException(LoggerIntegrationTest.java:19)\r\n\tat com.hlag.logging.log4j2.LoggerIntegrationTest.logException(LoggerIntegrationTest.java:11)\r\n\t[suppressed 70 lines]",
   "name": "java.lang.RuntimeException",
   "message": "java.lang.ArithmeticException: / by zero",
   "totalFilteredElements": 140
