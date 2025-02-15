@@ -114,7 +114,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
         JSONObject actualLogOutput = new JSONObject(actualStringOutput);
 
         Assertions.assertThat(actualLogOutput.get("stack").toString().split(System.lineSeparator()))
-                .filteredOn(line -> line.equals("caused by java.lang.ArithmeticException"))
+                .filteredOn(line -> line.equals("Caused by java.lang.ArithmeticException: / by zero"))
                 .hasSize(1);
     }
 
@@ -144,7 +144,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
         // trying to ignore all non stacktrace lines
         Assertions.assertThat(actualLogOutput.get("stack").toString().split(System.lineSeparator()))
                 .filteredOn(line -> !line.startsWith("\t[suppressed"))
-                .filteredOn(line -> !line.startsWith("caused by"))
+                .filteredOn(line -> !line.startsWith("Caused by"))
                 .filteredOn(line -> !line.startsWith("java.lang.RuntimeException"))
                 .allMatch(line -> line.startsWith("\tat "));
     }
