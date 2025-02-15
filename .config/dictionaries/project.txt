@@ -1,0 +1,12 @@
+appenders
+assertj
+jqcn
+hlag
+javadocs
+jaxrs
+ossrh
+projectlombok
+sonatype
+stackoverflow
+takanuva
+websphere
