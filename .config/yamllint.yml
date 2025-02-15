@@ -5,4 +5,4 @@ rules:
   line-length:
     max: 132
   comments:
-    min-spaces-from-content: 1
+    min-spaces-from-content: 1 # Renovate uses 1 space only

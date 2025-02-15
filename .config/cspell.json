@@ -1,41 +1,54 @@
 {
+  "import": ["@cspell/dict-cspell-bundle/cspell-ext.json"],
   "version": "0.2",
   "language": "en",
-  "words": [
-    "appender",
-    "appenders",
-    "classpath",
-    "codeowners",
-    "cpus",
-    "frenz",
-    "hlag",
-    "javadoc",
-    "javadocs",
-    "servlet",
-    "sonatype",
-    "stackoverflow",
-    "websphere"
+  "ignorePaths": [
+    ".git/",
+    ".idea/",
+    ".config/dictionaries/",
+    "**/.infracost/**",
+    "**/.terraform/**",
+    "**/*.tfstate.*",
+    "**/node_modules/**"
   ],
-  "ignoreWords": [
-    "amannn",
-    "assertj",
-    "conventionalcommits",
-    "dorny",
-    "fqcn",
-    "hapag",
-    "hmarr",
-    "ibiqlik",
-    "jaxrs",
-    "kayman",
-    "ludeeus",
-    "markdownlint",
-    "ossrh",
-    "projectlombok",
-    "rhysd",
-    "shellcheck",
-    "shuf",
-    "shunsuke",
-    "takanuva",
-    "temurin"
+  "dictionaries": [
+    "workflow",
+    "maven",
+    "python",
+    "docker",
+    "simple",
+    "terraform-module",
+    "project"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "workflow",
+      "path": "dictionaries/workflow.txt"
+    },
+    {
+      "name": "maven",
+      "path": "dictionaries/maven.txt"
+    },
+    {
+      "name": "python",
+      "path": "dictionaries/python.txt"
+    },
+    {
+      "name": "docker",
+      "path": "dictionaries/docker.txt"
+    },
+    {
+      "name": "simple",
+      "path": "dictionaries/simple.txt"
+    },
+    {
+      "name": "terraform-module",
+      "path": "dictionaries/terraform-module.txt"
+    },
+    {
+      "name": "project",
+      "path": "dictionaries/project.txt",
+      "addWords": true
+    }
   ]
 }
