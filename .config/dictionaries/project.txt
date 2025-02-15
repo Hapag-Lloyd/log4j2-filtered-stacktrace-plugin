@@ -1,6 +1,6 @@
-appenders
+appender
 assertj
-jqcn
+fqcn
 hlag
 javadocs
 jaxrs
