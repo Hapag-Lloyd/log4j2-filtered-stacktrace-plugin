@@ -2,10 +2,10 @@
 name: Lint files
 
 # yamllint disable-line rule:truthy
-on:
-  pull_request:
+on: pull_request
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_linter_callable.yml@e8c1c3deb93315b82c4bcd4957b215fd5f94e1c2
+    # yamllint disable-line rule:line-length
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/default_linter_callable.yml@eacb3b2aa878ce40caf1e8ad07d7e4238f64cb4d # 1.15.2
     secrets: inherit
