@@ -1,7 +1,9 @@
+alog
 appender
 appenders
 assertj
 fqcn
+graalvm
 hlag
 javadocs
 jaxrs
