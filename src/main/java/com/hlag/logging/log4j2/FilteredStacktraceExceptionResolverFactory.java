@@ -16,8 +16,12 @@ import org.apache.logging.log4j.layout.template.json.resolver.*;
 public final class FilteredStacktraceExceptionResolverFactory implements EventResolverFactory {
     private static final FilteredStacktraceExceptionResolverFactory INSTANCE = new FilteredStacktraceExceptionResolverFactory();
 
-    private FilteredStacktraceExceptionResolverFactory() {}
+    private FilteredStacktraceExceptionResolverFactory() {
+    }
 
+    /**
+     * Factory method to create the singleton instance of the plugin factory.
+     */
     @PluginFactory
     public static FilteredStacktraceExceptionResolverFactory getInstance() {
         return INSTANCE;

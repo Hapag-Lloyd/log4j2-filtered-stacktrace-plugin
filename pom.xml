@@ -6,7 +6,7 @@
 
     <groupId>com.hlag.logging</groupId>
     <artifactId>log4j2-stacktrace-filter</artifactId>
-    <!-- do not change this version. Done by the pipeline before pushing the artifact to Maven Central -->
+    <!-- do not change this version. Done by the workflow before pushing the artifact to Maven Central -->
     <version>1.0.0-SNAPSHOT</version>
     <name>Stacktrace filter for Log4j2</name>
     <description>Filters the stacktrace to reduce the size by removing irrelevant packages.</description>
@@ -15,8 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- we support Java 8 as Log4j2 does -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>8</maven.compiler.release>
     </properties>
 
     <licenses>
