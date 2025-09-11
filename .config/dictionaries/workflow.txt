@@ -1,4 +1,3 @@
 codeowners
-hapag
 infracost
 tfstate
