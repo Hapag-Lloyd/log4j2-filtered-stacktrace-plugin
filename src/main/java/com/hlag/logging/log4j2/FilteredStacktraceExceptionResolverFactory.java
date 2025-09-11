@@ -20,6 +20,8 @@ public final class FilteredStacktraceExceptionResolverFactory implements EventRe
     }
 
     /**
+     * Create the singleton instance of the plugin factory.
+     *
      * @return the singleton instance of the plugin factory.
      */
     @PluginFactory
