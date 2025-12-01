@@ -6,5 +6,5 @@ on: pull_request
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/maven_java_callable.yml@b83422871eb47977aa142138221aae2f18ff042b # 1.22.31
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/maven_java_callable.yml@590c56856a43c909afcc719f44ca96e3c2569b17 # 1.22.53
     secrets: inherit
