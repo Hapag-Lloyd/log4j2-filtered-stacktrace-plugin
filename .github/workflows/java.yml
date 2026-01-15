@@ -1,10 +1,12 @@
 ---
 name: Build Java PR
 
+# yamllint disable rule:comments
 # yamllint disable-line rule:truthy
 on: pull_request
+# yamllint enable rule:comments
 
 jobs:
   default:
-    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/maven_java_callable.yml@80e6abe387e3e421c999f8d1db4fbd1c52dace73 # 1.22.68
+    uses: Hapag-Lloyd/Workflow-Templates/.github/workflows/maven_java_callable.yml@5c9ed2712cf4a213138df8ab92f4e1384712784a # 1.25.8
     secrets: inherit

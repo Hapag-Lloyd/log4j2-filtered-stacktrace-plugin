@@ -1,4 +1,5 @@
-<!--- yamllint disable rule:single-title/single-h1 -->
+<!-- ignore multiple H1 headings on same level -->
+<!-- markdownlint-disable-file MD025 -->
 
 # Description
 
