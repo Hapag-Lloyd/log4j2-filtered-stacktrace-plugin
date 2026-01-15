@@ -129,7 +129,7 @@ class FilteredStacktraceStackTraceJsonResolverUnitTest {
 
         Assertions.assertThat(actualLogOutput.get("stack").toString().split(System.lineSeparator()))
                 .filteredOn(line -> line.contains("[suppressed "))
-                .hasSize(2);
+                .hasSize(4);
     }
 
     @Test
